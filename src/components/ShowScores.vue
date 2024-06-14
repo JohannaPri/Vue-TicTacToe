@@ -2,12 +2,14 @@
   import { IGameState } from '../models/IGameState';
   import { defineProps } from 'vue';
 
+  // Definiera props med typ för gameState från IGameState
   const props = defineProps<{
     gameState: IGameState;
   }>();
 </script>
 
 <template>
+   <!-- Visa aktuell poängställning för spelarna -->
   <aside class="scoreShow">
     <h1 class="scoreHeading"> Aktuell Poängställning:</h1>
     <p class="scorePlayer">{{ props.gameState.users.nameO }} har {{ props.gameState.scores.scoresO }} poäng!</p>
