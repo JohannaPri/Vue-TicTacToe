@@ -2,20 +2,25 @@
   import { defineProps, defineEmits, ref } from 'vue';
   import { IGameState } from '../models/IGameState';
 
+  // Definiera emit-händelser
   const emit = defineEmits(["usernameSubmitted"]);
+  // Definiera props med typer för xoro och gameState
   const props = defineProps<{
     xoro: string;
     gameState: IGameState;
   }>();
 
+  // Definiera en reaktiv variabel för att lagra användarnamn
   let name = ref("");
 
   const submitUserName = () => {
+    // Kolla vilken spelare (X eller O) och spara namnet i gameState
     if (props.xoro === "X") {
       props.gameState.users.nameX = name.value;
     } else {
       props.gameState.users.nameO = name.value;
     }
+    // Emit händelse när användarnamn är inskickat
     emit("usernameSubmitted", { xoro: props.xoro, name });
   };
 </script>
