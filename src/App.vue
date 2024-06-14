@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import TictactoeGame from './components/TictactoeGame.vue';
-
+ import TictactoeGame from './components/TictactoeGame.vue';
 </script>
 
 <template>
- <div>
-  <TictactoeGame />
- </div>
+    <div>
+        <TictactoeGame />
+    </div>
 </template>
 
 <style scoped>
