@@ -6,42 +6,45 @@
     import { IGameState } from '../models/IGameState';
     import ShowScores from './ShowScores.vue';
 
+    // Definiera emits för händelsen "play"
     const emit = defineEmits(["play"]);
 
+    // Skapa ett reaktivt gameState-objekt med spelens aktuella tillstånd
     const gameState = reactive<IGameState>({
-    gameboard: ["", "", "", "", "", "", "", "", ""],
-    showScores: false,
-    users: {
-        nameX: "",
-        nameO: "",
-    },
-    scores: {
-        scoresX: 0,
-        scoresO: 0,
-    },
-    isXturn: true,
-    gameOver: false,
+        gameboard: ["", "", "", "", "", "", "", "", ""],
+        showScores: false,
+        users: {
+            nameX: "",
+            nameO: "",
+        },
+        scores: {
+            scoresX: 0,
+            scoresO: 0,
+        },
+        isXturn: true,
+        gameOver: false,
     });
 
     // Hämta gameState från localStorage om det finns
     const gameStateFromLocalStorage = localStorage.getItem("gameState");
-    if (gameStateFromLocalStorage) {
-    Object.assign(gameState, JSON.parse(gameStateFromLocalStorage));
+        if (gameStateFromLocalStorage) {
+        Object.assign(gameState, JSON.parse(gameStateFromLocalStorage));
     }
-
-    // Spara gameState till localStorage när det ändras
+    // Bevaka förändringar i gameState och spara till localStorage
     watch(gameState, (newGameState) => {
-    localStorage.setItem("gameState", JSON.stringify(newGameState));
+        localStorage.setItem("gameState", JSON.stringify(newGameState));
     });
 
+    // Funktion för att spela spelet när en spelruta klickas på
     const playGame = (index: number) => {
-    // Exekvera logik för att spela spelet och uppdatera gameState vid behov
-    emit("play", index);
+        emit("play", index);
     };
 </script>
 
 <template>
+    <!-- Rendera hela Tic Tac Toe-spelet -->
     <div class="ticTacToeGame">
+        <!-- Visa spelbrädet och scores om båda spelarna har angett sina namn -->
         <div class="gameBoardShow" v-if="gameState.users.nameX.length > 0 && gameState.users.nameO.length > 0">
             <GameBoard :gameState="gameState" @play="playGame" />
         </div>
