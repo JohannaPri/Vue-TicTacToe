@@ -2,18 +2,25 @@
   import { IGameState } from '../models/IGameState';
   import { defineEmits, defineProps } from 'vue';
 
+  // Definiera emit-händelser för gameRestarted och newGameStarted
   const emit = defineEmits(["gameRestarted", "newGameStarted"]);
+  // Definiera props med typ för gameState från IGameState
   const props = defineProps<{
     gameState: IGameState;
   }>();
 
+  // Funktion för att starta om spelet
   const restartGame = () => {
+    // Återställer spelbrädet och återställer spelets status
     props.gameState.gameboard = ["","","","","","","","","",];
     props.gameState.gameOver = false;
+    // Emit händelse när spelet startas om
     emit("gameRestarted");
   };
 
+  // Funktion för att starta ett nytt spel med nya spelare
   const newGame = () => {
+    // Återställer spelbrädet, spelarens namn och poäng, samt ta bort gameState från localStorage
     props.gameState.gameboard = ["","","","","","","","","",];
     props.gameState.gameOver = false;
     props.gameState.users.nameX = "";
@@ -21,17 +28,19 @@
     props.gameState.scores.scoresX= 0;
     props.gameState.scores.scoresO= 0;
     localStorage.removeItem("gameState");
+    // Emit händelse när ett nytt spel startas
     emit("newGameStarted");
   };
 </script>
 
 <template>
-    <div class="commandButtons">
-      <div class="restartGame" v-if="gameState.gameOver">
-        <button @click="restartGame">Starta om</button>
-        <button @click="newGame">Spela med nya spelare</button>
-      </div>
+  <!-- Knappar för att starta om spel eller starta nytt spel -->
+  <div class="commandButtons">
+    <div class="restartGame" v-if="gameState.gameOver">
+      <button @click="restartGame">Starta om</button>
+      <button @click="newGame">Spela med nya spelare</button>
     </div>
+  </div>
 </template>
 
 <style scoped>
