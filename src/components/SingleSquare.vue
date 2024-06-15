@@ -6,8 +6,10 @@
     state: string;
   }>();
 
-  // Definiera emits för händelsen "squareClicked"
-  const emit = defineEmits(["squareClicked"]);
+  // Definiera emits för händelsen "squareClicked" 
+  const emit = defineEmits<{
+    (e: 'squareClicked'): void;
+  }>();
 
   // Funktion för att hantera klick på spelrutan
   const playGame = () => {

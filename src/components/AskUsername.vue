@@ -3,29 +3,33 @@
   import { IGameState } from '../models/IGameState';
 
   // Definiera emit-händelser
-  const emit = defineEmits(["usernameSubmitted"]);
+  const emit = defineEmits<{
+    (e: 'usernameSubmitted', payload: { xoro: string; name: string }): void;
+  }>();
+
   // Definiera props med typer för xoro och gameState
   const props = defineProps<{
     xoro: string;
     gameState: IGameState;
   }>();
 
-  // Definiera en reaktiv variabel för att lagra användarnamn
-  let name = ref("");
+  // Reaktiv variabel för användarnamn
+  const name = ref("");
 
+  // Funktion för att skicka användarnamn
   const submitUserName = () => {
-    // Kolla vilken spelare (X eller O) och spara namnet i gameState
     if (props.xoro === "X") {
       props.gameState.users.nameX = name.value;
     } else {
       props.gameState.users.nameO = name.value;
     }
-    // Emit händelse när användarnamn är inskickat
-    emit("usernameSubmitted", { xoro: props.xoro, name });
+    // Emitterar händelse när användarnamn är inskickat
+    emit("usernameSubmitted", { xoro: props.xoro, name: name.value });
   };
 </script>
 
 <template>
+  <!-- Komponent för välkomsttext och inmatningsformulär -->
   <div class="welcome">
     <h1>Välkommen till Tic Tac Toe!</h1>
     <p>För att starta spelet, ange namnen för spelare X och O nedan.</p>
