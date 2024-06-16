@@ -1,9 +1,45 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Xnjua3bd)
-# Inlämningsuppgift Tre-i-rad
+# Tic Tac Toe!
 
-Denna mall innehåller ett tomt vue-projekt baserat på typescript. Er uppgift är att skapa spelet tre-i-rad med hjälp av denna mall. Eftersom ni inte har någonting att utgå ifrån så har ni fria händer att skapa just er unika lösning.
+---
 
-## Betyg G
+#### **Länk till spel**
+
+https://medieinstitutet.github.io/vue-tictactoe-JohannaPri/
+
+---
+
+**Detta Tic-Tac-Toe-spel är skapat som en uppgift i en fördjupningskurs i JavaScript. Spelet är byggt med Vue.js och TypeScript för att ge praktisk erfarenhet av att använda dessa tekniker.**
+
+---
+
+## Built With
+
+- **Vue.js**
+- **Vite**
+- **TypeScript**
+- **HTML/CSS**
+---
+
+## Projektuppsättning
+
+**För att sätta upp projektet lokalt, följ dessa steg:**
+
+- #### **Klona repot från GitHub:**
+    - git clone https://medieinstitutet.github.io/vue-tictactoe-JohannaPri/
+
+- #### **Installera dependencies:**
+    - npm install
+
+- #### **Starta utvecklingsservern:**
+    - npm run dev
+
+---
+
+## Uppgiftens Krav
+
+**Mallen vi fick var ett tomt vue-projekt baserat på typescript. Eftersom vi inte hade någonting att utgå ifrån så fick vi fria händer att skapa ett helt eget Tic Tac Toe.**
+
+### Betyg G
 
 - Kunna ange spelarnamn för X respektive O
 - Kunna spela ett spel och få en vinnare/oavgjort
@@ -11,7 +47,7 @@ Denna mall innehåller ett tomt vue-projekt baserat på typescript. Er uppgift �
 - Kunna starta ett nytt spel
 - Använda minst en komponent
 
-## Betyg VG
+### Betyg VG
 
 - Använda minst tre komponenter för er lösning
 - Spara poänghistorik för spelarna
