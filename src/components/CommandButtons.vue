@@ -64,11 +64,12 @@
     border-radius: 8px;
     border: 3px solid transparent;
     padding: 0.6em 1.2em;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 500;
     font-family: inherit;
     cursor: pointer;
     transition: border-color 0.25s;
+    letter-spacing: 0.03rem;
   }
 
   button:hover {

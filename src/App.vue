@@ -11,6 +11,7 @@
 <style scoped>
     div {
         width: auto;
+        min-width: fit-content;
     }
 
     @media (width <= 740px) {

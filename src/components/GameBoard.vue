@@ -81,7 +81,7 @@
 <template>
   <!-- Visa vems tur det är om spelet inte är över, annars visa 'Game Over' -->
   <h1 v-if="!gameState.gameOver">Det är {{ currentUser }}s tur!</h1>
-  <h1 v-else>Game Over!</h1>
+  <h1 class="gameOver" v-else>Game Over!</h1>
   <!-- Visa spelbrädet -->
   <div class="gameBoard">
     <SingleSquare
@@ -98,6 +98,23 @@
   h1 {
     color: #b35d90;
      letter-spacing: 0.05rem;
+  }
+
+  .gameOver {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    animation: gameOver 2s infinite;
+    margin-top: 15px;
+
+  }
+
+  @keyframes gameOver {
+    0%, 100% {
+      transform: scale(1); 
+    }
+    50% {
+      transform: scale(1.1); 
+    }
   }
   
   .gameBoard {
