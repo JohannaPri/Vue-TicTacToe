@@ -54,3 +54,7 @@ https://medieinstitutet.github.io/vue-tictactoe-JohannaPri/
 - Kunna visa poängstatistiken
 - Kunna stänga webbläsaren och komma tillbaka där spelet avbröts
 - Kunna nollställa statistik och börja om med nya spelare
+
+----
+
+
