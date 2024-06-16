@@ -31,7 +31,7 @@
 <template>
   <!-- Komponent för välkomsttext och inmatningsformulär -->
   <div class="welcome">
-    <h1>Välkommen till Tic Tac Toe</h1>
+    <h1 class="welcomeHeading">Välkommen till Tic Tac Toe</h1>
     <p>För att starta spelet, ange namnen för spelare X och O nedan.</p>
     <label>Namnet på spelare {{ xoro }}</label>
     <input v-model="name" class="askPlayer"/>
@@ -40,6 +40,9 @@
 </template>
 
 <style scoped>
+  .welcomeHeading {
+    margin-top: 10px;
+  }
   .usernameBtn {
     border-radius: 1rem;
     padding: 1rem;

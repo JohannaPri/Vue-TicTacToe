@@ -80,7 +80,7 @@
 
 <template>
   <!-- Visa vems tur det är om spelet inte är över, annars visa 'Game Over' -->
-  <h1 v-if="!gameState.gameOver">Det är {{ currentUser }}s tur!</h1>
+  <h1 class="whosTurn" v-if="!gameState.gameOver">Det är {{ currentUser }}s tur!</h1>
   <h1 class="gameOver" v-else>Game Over!</h1>
   <!-- Visa spelbrädet -->
   <div class="gameBoard">
@@ -98,6 +98,11 @@
   h1 {
     color: #b35d90;
      letter-spacing: 0.05rem;
+  }
+
+  .whosTurn {
+    margin-top: 15px;
+    letter-spacing: 0.1rem;
   }
 
   .gameOver {

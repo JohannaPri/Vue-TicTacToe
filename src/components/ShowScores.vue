@@ -34,11 +34,11 @@
   }
 
   .scoreHeading {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
+    letter-spacing: 0.1rem;
   }
 
   .scorePlayer {
     font-size: 1.1rem;
   }
-
 </style>
