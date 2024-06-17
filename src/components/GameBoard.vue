@@ -114,7 +114,6 @@
     letter-spacing: 0.1rem;
     animation: gameOver 2s infinite;
     margin-top: 15px;
-
   }
 
   @keyframes gameOver {
