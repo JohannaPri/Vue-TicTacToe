@@ -16,7 +16,7 @@
 
     @media (width <= 740px) {
         div {
-            
+            scale: 0.9;
             max-width: 22rem;
         }
     }
