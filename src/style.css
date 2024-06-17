@@ -12,10 +12,6 @@ body {
   min-width: fit-content;
   max-width: 100vw;
   min-height: 100vh;
-  
-  -webkit-touch-callout: none; 
-  -webkit-user-select: none;   
-  user-select: none;
 }
 
 h1 {
