@@ -72,7 +72,6 @@
         padding: 2rem;
         border-radius: 10px;
         height: fit-content;
-        margin-left: -15px;
     }
 
     .gameBoardShow {
