@@ -6,8 +6,10 @@
     import { IGameState } from '../models/IGameState';
     import ShowScores from './ShowScores.vue';
 
-    // Definiera emits för händelsen "play"
-    const emit = defineEmits(["play"]);
+    // Definierar en 'play'-emit med ett index
+    const emit = defineEmits<{
+        (e: 'play', index: number): void;
+    }>();
 
     // Skapa ett reaktivt gameState-objekt med spelens aktuella tillstånd
     const gameState = reactive<IGameState>({
@@ -37,8 +39,8 @@
 
     // Funktion för att spela spelet när en spelruta klickas på
     const playGame = (index: number) => {
-        emit("play", index);
-    };
+    emit('play', index);
+};
 </script>
 
 <template>
