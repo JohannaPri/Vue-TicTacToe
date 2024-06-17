@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  import { defineProps, defineEmits } from 'vue';
-  import SingleSquare from './SingleSquare.vue';
-  import { IGameState } from '../models/IGameState';
+  import { defineProps, defineEmits, watch } from "vue";
+  import SingleSquare from "./SingleSquare.vue";
+  import { IGameState } from "../models/IGameState";
 
-  // Definiera props med typ för gameState från IGameState
+  // Definiera props för komponenten med typ för gameState
   const props = defineProps<{
     gameState: IGameState;
   }>();
@@ -11,51 +11,51 @@
   // Definiera emit-händelsen för 'play'
   const emit = defineEmits(["play"]);
 
-  let currentUser = props.gameState.users.nameX;
+  // Sätt aktuell användare baserat på vems tur det är
+  let currentUser = props.gameState.isXturn ? props.gameState.users.nameX : props.gameState.users.nameO;
 
-  // Funktion för att hantera ett speldrag
+  // Bevaka förändringar i isXturn och uppdatera aktuell användare
+  watch(() => props.gameState.isXturn, (newVal) => {
+    currentUser = newVal ? props.gameState.users.nameX : props.gameState.users.nameO;
+  });
+
+  // Funktion för att hantera ett drag
   const play = (index: number) => {
-    // Om spelet är över, returnera
     if (props.gameState.gameOver) {
       return;
     }
 
     const { gameboard } = props.gameState;
     if (gameboard[index].length === 0) {
-      // Uppdatera spelbrädet beroende på vilken tur det är
+      // Sätt 'X' eller 'O' baserat på vems tur det är
       if (props.gameState.isXturn) {
         gameboard[index] = "X";
-        currentUser = props.gameState.users.nameO;
       } else {
         gameboard[index] = "O";
-        currentUser = props.gameState.users.nameX;
       }
-      // Växla spelarens tur
       props.gameState.isXturn = !props.gameState.isXturn;
 
       // Kontrollera om spelet är över
       checkIfGameOver(index);
-      // Emit händelse när ett drag har gjorts
       emit("play", { index, player: gameboard[index] });
     }
   };
 
+  // Funktion för att kontrollera om spelet är över
   function checkIfGameOver(index: number) {
-     // Definiera alla vinnande kombinationer
     const winningCombinations = [
-      [0, 1, 2], 
-      [3, 4, 5], 
-      [6, 7, 8], 
-      [0, 3, 6], 
-      [1, 4, 7], 
-      [2, 5, 8], 
-      [0, 4, 8], 
-      [2, 4, 6]
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6] 
     ];
 
     const currentPlayer = props.gameState.gameboard[index];
-
-    // Kontrollera om det finns en vinnande kombination
+    // Kontrollera alla vinnande kombinationer
     for (const combination of winningCombinations) {
       const [a, b, c] = combination;
       if (
@@ -69,7 +69,6 @@
         } else {
           props.gameState.scores.scoresX++;
         }
-        // Markera spelet som över
         props.gameState.gameOver = true;
         break;
       }
