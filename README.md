@@ -1,7 +1,5 @@
 # Tic Tac Toe!
 
----
-
 #### **Länk till spel**
 
 https://medieinstitutet.github.io/vue-tictactoe-JohannaPri/
