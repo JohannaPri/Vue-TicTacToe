@@ -54,5 +54,3 @@ https://medieinstitutet.github.io/vue-tictactoe-JohannaPri/
 - Kunna nollställa statistik och börja om med nya spelare
 
 ----
-
-
