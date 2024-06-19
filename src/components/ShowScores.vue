@@ -12,8 +12,8 @@
    <!-- Visa aktuell poängställning för spelarna -->
   <aside class="scoreShow">
     <h1 class="scoreHeading">Aktuell Poängställning</h1>
-    <p class="scorePlayer">{{ props.gameState.users.nameO }} har {{ props.gameState.scores.scoresO }} poäng</p>
-    <p class="scorePlayer"> {{ props.gameState.users.nameX }} har {{ props.gameState.scores.scoresX }} poäng</p>
+    <p class="scorePlayer">{{ props.gameState.users.nameO }}: {{ props.gameState.scores.scoresO }} poäng</p>
+    <p class="scorePlayer"> {{ props.gameState.users.nameX }}: {{ props.gameState.scores.scoresX }} poäng</p>
   </aside>
 </template>
 
