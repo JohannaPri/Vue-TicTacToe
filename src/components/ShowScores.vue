@@ -53,7 +53,7 @@
     }
 
     .scoreShow {
-      margin-top: 40px
+      margin-top: 50px
     }
   }
 </style>
