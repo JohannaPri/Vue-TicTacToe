@@ -34,7 +34,7 @@
   }
 
   .scoreHeading {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     letter-spacing: 0.1rem;
     line-height: 1.2;
   }

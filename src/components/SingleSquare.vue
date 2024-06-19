@@ -30,6 +30,7 @@
 <style scoped>
   .gameSquare {
     border: 2px solid #b35d90;
+    overflow: hidden;
   }
 
   .gameSquare:hover {
