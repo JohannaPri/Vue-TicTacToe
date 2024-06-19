@@ -138,10 +138,11 @@
     color: #b35d90; 
   }
 
-  @media (width: 740px) {
+  @media (max-width: 740px) {
     .gameBoard {
       width: 20rem;
       height: 20rem;
+
     }
 
     h1 {
