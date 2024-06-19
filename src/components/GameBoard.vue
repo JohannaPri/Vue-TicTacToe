@@ -156,6 +156,7 @@
 
     .whosTurn {
     letter-spacing: 0.1rem;
+    font-size: 2rem;
   }
 }
 </style>
