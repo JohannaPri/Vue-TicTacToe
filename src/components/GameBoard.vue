@@ -132,8 +132,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
     background-color: #ffccd5; 
     color: #b35d90; 
   }
@@ -142,7 +142,6 @@
     .gameBoard {
       width: 20rem;
       height: 20rem;
-
     }
 
     h1 {

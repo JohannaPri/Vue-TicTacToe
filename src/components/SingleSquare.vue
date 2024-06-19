@@ -31,6 +31,7 @@
   .gameSquare {
     border: 2px solid #b35d90;
     overflow: hidden;
+    border-radius: 8px;
   }
 
   .gameSquare:hover {

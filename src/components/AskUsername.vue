@@ -45,11 +45,11 @@
   }
    
   .usernameBtn {
-    border-radius: 1rem;
-    padding: 1rem;
+    border-radius: 16px;
+    padding: 16px;
     background-color: #b35d90; 
     color: #f5e6e8;
-    margin: 1rem;
+    margin: 16px;
     border: 3px solid transparent;
     transition: border-color 0.25s;
     font-size: 1rem;
@@ -64,8 +64,8 @@
   }
 
   input {
-    border-radius: 1rem;
-    padding: 1rem;
+    border-radius: 16px;
+    padding: 16px;
     font-size: 1rem;
     color: #b35d90; 
     font-weight: bolder;
@@ -75,7 +75,7 @@
 
   label {
     font-size: 1.5rem;
-    margin: 1rem;
+    margin: 16px;
     color: #b35d90; 
   }
 
@@ -90,7 +90,7 @@
 
   @media (max-width: 740px) {
     .welcome {
-      max-width: 30rem;
+      max-width: 480px;
     }
 
     h1 {

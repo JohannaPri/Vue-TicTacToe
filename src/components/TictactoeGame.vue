@@ -70,7 +70,7 @@
         background-color: #ffccd5; 
         border: 5px solid #b35d90; 
         padding: 2rem;
-        border-radius: 10px;
+        border-radius: 8px;
         height: fit-content;
     }
 
