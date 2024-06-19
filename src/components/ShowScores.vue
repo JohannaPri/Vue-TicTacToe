@@ -9,7 +9,7 @@
 </script>
 
 <template>
-   <!-- Visa aktuell poängställning för spelarna -->
+  <!-- Visa aktuell poängställning för spelarna -->
   <aside class="scoreShow">
     <h1 class="scoreHeading">Aktuell Poängställning</h1>
     <p class="scorePlayer">{{ props.gameState.users.nameO }}: {{ props.gameState.scores.scoresO }} poäng</p>

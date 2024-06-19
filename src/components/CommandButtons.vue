@@ -8,7 +8,7 @@
     (e: 'newGameStarted'): void;
   }>();
 
-   // Definiera props med typ för gameState från IGameState
+  // Definiera props med typ för gameState från IGameState
   const props = defineProps<{
     gameState: IGameState;
   }>();
