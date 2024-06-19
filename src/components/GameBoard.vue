@@ -107,6 +107,7 @@
   .whosTurn {
     margin-top: 15px;
     letter-spacing: 0.1rem;
+    font-size: 3rem;
     
   }
 
