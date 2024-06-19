@@ -11,7 +11,7 @@
 <template>
    <!-- Visa aktuell poängställning för spelarna -->
   <aside class="scoreShow">
-    <h1 class="scoreHeading"> Aktuell Poängställning</h1>
+    <h1 class="scoreHeading">Aktuell Poängställning</h1>
     <p class="scorePlayer">{{ props.gameState.users.nameO }} har {{ props.gameState.scores.scoresO }} poäng</p>
     <p class="scorePlayer"> {{ props.gameState.users.nameX }} har {{ props.gameState.scores.scoresX }} poäng</p>
   </aside>
@@ -36,9 +36,24 @@
   .scoreHeading {
     font-size: 2.4rem;
     letter-spacing: 0.1rem;
+    line-height: 1.2;
   }
 
   .scorePlayer {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 740px) {
+    .scoreHeading {
+      font-size: 2rem;
+    }
+
+    .scorePlayer {
+      line-height: 1.1;
+    }
+
+    .scoreShow {
+      margin-top: 40px
+    }
   }
 </style>

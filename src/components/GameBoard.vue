@@ -107,11 +107,12 @@
   .whosTurn {
     margin-top: 15px;
     letter-spacing: 0.1rem;
+    
   }
 
   .gameOver {
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.2rem;
     animation: gameOver 2s infinite;
     margin-top: 15px;
   }
@@ -137,7 +138,7 @@
     color: #b35d90; 
   }
 
-  @media (max-width: 740px) {
+  @media (width: 740px) {
     .gameBoard {
       width: 20rem;
       height: 20rem;
@@ -145,6 +146,15 @@
 
     h1 {
       font-size: 2rem;
+      padding-bottom: 5px;
     }
+
+    .gameOver {
+      font-size: 2.5rem;
+    }
+
+    .whosTurn {
+    letter-spacing: 0.1rem;
   }
+}
 </style>
